@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>회원가입</h2>
+	<hr>
+	<form action="result.jsp" method="post">
+		아이디 : <input type="text" name="id"><br>
+		암호 : <input type="password" name="pwd"><br>
+		혈액형 : <input type="radio" name="bloodType" value="A">A형	
+		혈액형 : <input type="radio" name="bloodType" value="B">B형
+		혈액형 : <input type="radio" name="bloodType" value="O">O형
+		혈액형 : <input type="radio" name="bloodType" value="AB">AB형<br>
+		
+		취미 : 
+		<input type="checkbox" name="hobby" value="마라톤">마라톤
+		<input type="checkbox" name="hobby" value="게임">게임
+		<input type="checkbox" name="hobby" value="수영">수영
+		<input type="checkbox" name="hobby" value="영화감상">영화감상
+		
+		<input type="hidden" name ="code" value="1234"><br>	
+		
+		파일 선택 :
+		<input type="file" name="upload"><br>
+		<input type="image" src="minji.png" width="480">
+		<input type="button" value="버튼">
+	 	<input type="reset" value="취소">
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>
