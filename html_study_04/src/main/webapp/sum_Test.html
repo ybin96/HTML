@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+아무숫자 입력하시오 : <input id="n1" type="number">
+<button id="btn">합누적</button>
+<hr>
+결과 : <span id="result"></span>
+
+<script type="text/javascript">
+	document.getElementById("btn").onclick=function(){
+		var n1 = (document.getElementById("n1").value);
+		var sum=0;
+		for(var i=1;i<=n1;i++){
+			sum +=i;
+		}
+		document.getElementById("result").innerHTML=sum;
+	}
+	
+	
+</script>
+</body>
+</html>

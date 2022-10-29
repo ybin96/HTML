@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			var header = document.querySelectorAll("h1");
+			for(i=0;i<header.length;i++){
+				header[i].style.color="orange";
+				header[i].style.background="pink";
+				header[i].innerHTML="huiju";
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<h1 id="header">희주</h1>
+	<h1 id="header">희주</h1>
+	<h1 id="header">희주</h1>
+	<button id="btn">확인</button>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<img src="minji.png" id="result">
+	<script type="text/javascript">
+		var today = new Date();
+		var hours = today.getHours();
+		
+		if(hours <= 18){
+			document.getElementById("result").src="minji2.png";
+		}else{
+			document.getElementById("result").src="minji.png";
+		}
+	
+	</script>
+</body>
+</html>

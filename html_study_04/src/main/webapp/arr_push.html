@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	var arr=[];
+	arr.push(10);
+	arr.push(20);
+	arr.push(30);
+	for(i=0;i<arr.length;i++){
+		console.log(arr[i]);
+	}
+	*/
+	
+	var data = [];
+	data.push({name:"kkk",kor:100,eng:98,math:70});
+	data.push({name:"aaa",kor:10,eng:88,math:60});
+	data.push({name:"bbb",kor:20,eng:78,math:50});
+	data.push({name:"ccc",kor:30,eng:68,math:40});
+	data.push({name:"ddd",kor:40,eng:58,math:30});
+	data.push({name:"eee",kor:50,eng:48,math:20});
+	data.push({name:"fff",kor:60,eng:38,math:10});
+	
+	//console.log(data);
+	
+	for(i in data){
+		data[i].getSum = function(){
+			return this.kor + this.eng + this.math;
+		}
+		data[i].getAvg = function(){
+			return Math.round(this.getSum()/3);
+		}
+	}
+	var output = "이름\t총점\t평균\n";
+	
+	for(i in data){
+		with(data[i]){
+			output += name + "\t" + getSum() + "\t" + getAvg() + "\n";
+		}
+	}
+	alert(output);
+	
+</script>
+</body>
+</html>

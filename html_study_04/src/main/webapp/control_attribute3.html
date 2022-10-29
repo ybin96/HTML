@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btn").onclick = function() {
+			var image = document.getElementById("img");
+			//image.setAttribute("src","minji.png");
+			image.src = "minji.png";
+			//image.data_index = 10;
+			image.setAttribute("data_index",10);
+		}
+		document.getElementById("small").onclick = function() {
+			var image = document.getElementById("img");
+			//image.setAttribute("width",800);
+			//image.setAttribute("height",1000);
+			//image.width = 800;
+			//image.height = 1000;
+		}
+	}
+</script>
+</head>
+<body>
+	<img id="img">
+	<button id="btn">이미지 출력</button>
+	<button id="small">축소</button>
+</body>
+</html>

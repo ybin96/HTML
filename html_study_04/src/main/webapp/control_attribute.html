@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			var image = document.getElementById("img");
+			
+			image.src="minji.png";
+		}
+		document.getElementById("small").onclick=function(){
+			var image = document.getElementById("img");
+			
+			image.width = 800;
+			image.height = 1000;
+		}
+	}
+</script>
+</head>
+<body>
+	<img id="img">
+	<button id="btn">이미지 출력</button>
+	<button id="small">축소</button>
+</body>
+</html>
