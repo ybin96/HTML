@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var goods=[
+		{no:1,name:"축구공1",qty:10,price:15000,fname:"ball1.jpg"},
+		{no:2,name:"축구공2",qty:20,price:25000,fname:"ball2.jpg"},
+		{no:3,name:"축구공3",qty:15,price:35000,fname:"ball3.jpg"},
+		{no:4,name:"축구공4",qty:25,price:65000,fname:"ball4.jpg"},
+		{no:5,name:"축구공5",qty:100,price:55000,fname:"ball5.jpg"}
+	];
+	
+
+	window.onload=function(){
+		var ball = document.getElementById("ball");
+		var no = document.getElementById("no");
+		var name = document.getElementById("name");
+		var qty = document.getElementById("qty");
+		var price = document.getElementById("price");
+		var i=0;
+		setInterval(function(){
+			var g = goods[i];
+			ball.src = g.fname;
+			no.innerHTML = g.no;
+			name.innerHTML = g.name;
+			qty.innerHTML = g.qty;
+			price.innerHTML = g.price;
+			i++;
+			if(i>=goods.length){
+				i=0;
+			}
+		},1000);
+	}
+	
+	
+
+</script>
+</head>
+<body>
+	<img id="ball" src="ball1.jpg" width="150" height="150">
+	<hr>
+	상품번호 : <span id="no"></span><br>
+	상품명 : <span id="name"></span><br>
+	수량 : <span id="qty"></span><br>
+	가격 : <span id="price"></span><br>
+</body>
+</html>

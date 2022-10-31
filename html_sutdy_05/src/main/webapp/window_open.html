@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var w;
+		document.getElementById("btnNew").onclick=function(){
+			w = window.open("","","width=600,heigth=300");
+		}
+		
+		document.getElementById("btnAdd").onclick=function(){
+			w.document.write("<h1>hello jave</h1>");	
+		}
+		
+		document.getElementById("btnNaver").onclick=function(){
+			window.open("http://www.naver.com","naver","width=400,height =300");
+		}
+		
+		document.getElementById("btnOpen").onclick=function(){
+			var v = window.open("info.html","","width=450,height=300");
+			v.onload=function(){
+				var name = document.getElementById("name").value;
+				v.document.getElementById("name").value=name;
+			}
+			
+		}
+	}
+</script>
+</head>
+<body>
+이름 : <input type="text" id="name"><br>
+나이 : <input type="text" id="age"><br>
+<button id="btnNew">새창열기</button>
+<button id="btnNaver">네이버 열기</button>
+<button id="btnAdd">새창에 노드생성</button>
+<button id="btnOpen">입력창 열기</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var data ="안녕하세요 반갑습니다 예쁜미소가 아름답군요";
+	
+	window.onload=function(){
+		var news = document.getElementById("news");
+		var n = 1;
+		setInterval(function(){
+			var txt = data.substr(0,n);
+			n++;
+			news.value=txt;
+			if(n> data.length){
+				n=1;
+			}
+		},200);
+	}
+	
+</script>
+</head>
+<body>
+	실시간 뉴스 : <input id="news" type="text" size="50">
+</body>
+</html>

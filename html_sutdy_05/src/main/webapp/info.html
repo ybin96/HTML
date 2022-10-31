@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			var name = document.getElementById("name").value;
+			var age = document.getElementById("age").value;
+			opener.document.getElementById("name").value=name;	// info.html을 열었던 곳의 name을 현재 var name으로 변경
+			opener.document.getElementById("age").value=age;	// info.html을 열었던 곳의 age을 현재 var age으로 변경
+			window.close();
+		}
+	}
+	
+	
+</script>
+</head>
+<body>
+	이름 : <input type="text" id="name"><br>
+	나이 : <input type="text" id="age"><br>
+	<button id="btn">확인</button>
+</body>
+</html>

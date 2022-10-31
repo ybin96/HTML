@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	//var data = "hello korea";
+	//alert(data.length);
+	//var a = data.charAt(0);
+	//console.log(a);
+	
+	var a = "hello";
+	var b = "korea";
+	var data = a.concat(b);
+	console.log(data);
+	
+	var email = "tiger@nate.co.kr";
+	var i = email.indexOf("@");
+	var j = email.indexOf("#");
+	var m = email.indexOf(".");
+	var n = email.lastIndexOf(".");	// 뒤에서부터 찾기
+	var k = email.match("@");	
+	var l = email.match("#");	
+	console.log(i);
+	console.log(j); // 없으면 -1을 반환
+	console.log(m); 
+	console.log(n); 
+	console.log(k); 
+	console.log(l); 
+	
+	var data = "hello java";
+	var c = data.replace("java","hi");
+	var z = data.search("java");
+	console.log(z);
+	console.log(c);
+	
+	var data = "ㅎㅇ,ㅂㄱ,ㄹㄹ,ㅇㅇ,"
+	var arr = data.split(",");
+	for(i=0;i<arr.length;i++){
+		console.log(arr[i]);
+	}
+	
+	var good = " hello korea hello java"
+	var p = good.slice(6);
+	console.log(p);
+	var e = good.toUpperCase();
+	console.log(e);
+	var trim = good.trim();
+	console.log(trim);
+	
+</script>
+</body>
+</html>

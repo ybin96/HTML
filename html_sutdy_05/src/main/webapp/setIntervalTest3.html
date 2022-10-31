@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var data = [
+		"손흥민 콘테가 핸드브레이크 올린 채 경기한다고? 노노~",
+		"콘테 감독 ‘답답한 전술’ 비판에 방어막, '분발하겠다' 다짐",
+		"손흥민(30)이 최근 작전력에 비판을 받고 있는 안토니오 콘테 감독을 두둔하고 나섰다."
+	];
+	
+	
+	window.onload=function(){
+		var news = document.getElementById("news");
+		var i =0;
+		var n =1;
+		setInterval(function(){
+			var row = data[i];
+			var text = row.substr(0,n);
+			news.value = text;
+			n++
+			if(n>row.length){
+				i++;
+				n = 1;
+			}
+			if(i>= data.length){
+				i=0;
+			}
+		},200);
+	}
+	
+</script>
+</head>
+<body>
+	실시간 뉴스 : <input id="news" type="text" size="100">
+</body>
+</html>

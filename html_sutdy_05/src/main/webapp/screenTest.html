@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	
+	window.onresize=function(){
+		var w = screen.width;
+		var h = screen.height;
+		var w1 = screen.availWidth;
+		var h1 = screen.availHeight;
+		var data = "width:"+w+",height:"+h+"<br>";
+		data += "width:"+w+",height:"+h+"<br>";
+		document.getElementById("info").innerHTML=data;
+	}
+	
+
+</script>
+</head>
+<body>
+	<div id="info"></div>
+	
+
+</body>
+</html>
