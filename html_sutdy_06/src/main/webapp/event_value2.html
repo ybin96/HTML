@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ #wrap{
+ 	width: 600px;
+ 	height: 800px;
+ 	border: 1px solid red;
+ 	position: relative;
+ }
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var ball = document.getElementById("img");
+		ball.style.position="absolute";
+		
+		document.body.onclick = function(e){
+			var x = e.x;
+			var y = e.y;
+			ball.style.left = x+"px";
+			ball.style.top = y+"px";
+			
+			document.getElementById("wrap").innerHTML += row;
+			
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<img id="img" src="./images/ball1.jpg" width="50" height="50">
+	</div>
+</body>
+</html>

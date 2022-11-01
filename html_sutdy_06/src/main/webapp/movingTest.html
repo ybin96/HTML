@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var color_arr = ["yellow","blue","green","ornage","red","pink","gray"]
+	// 난수 발생시키는 함수 (limit가 10이면 0~10까지 난수)
+	function nextRandomInteger(limit){
+		return Math.round(Math.random()*limit);
+	}
+	
+	var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	function randomAlphabet(){
+		return alphabet.charAt(nextRandomInteger(25));	// 0~25까지의 난수를 가져온다 ==> 알파벳 전부난수
+	}
+	
+	function randomSpeed(maxSpeed){
+		return Math.random() * maxSpeed - Math.random() * maxSpeed;
+	}
+	
+	var canvasWidth = 700;
+	var canvasHeight = 500;
+	
+	function MovingText(){
+		this.x = nextRandomInteger(700);	// 700을 벗어나지 않게 x축을 설정
+		this.y = nextRandomInteger(500);	// 500을 벗어나지 않게 y축을 설정
+		this.vX = randomSpeed(10);			// x축 속도가 10 미만으로 설정
+		this.vY = randomSpeed(10);			// y축 속도가 10 미만으로 설정
+		
+		this.tag = document.createElement("h1");	// h1이라는 태그 생성
+		this.tag.innerHTML = randomAlphabet();		// 만든 h1태그에 랜덤 알파벳을 적는다
+		this.tag.style.position="absolute";	
+		this.tag.style.color = color_arr[nextRandomInteger(color_arr.length-1)];
+		document.body.appendChild(this.tag);		// body에 적는다
+	}
+	
+	MovingText.prototype.move=function(){
+		if(this.x < 0 || this.x > canvasWidth){
+			this.vX *= -1;
+		}
+		if(this.y < 0 || this.y > canvasHeight){
+			this.vY *= -1;
+		}
+		
+		this.x += this.vX;
+		this.y += this.vY;
+		
+		this.tag.style.left = this.x + 'px';
+		this.tag.style.top = this.y + 'px';
+	}
+	
+	window.onload=function(){
+		var arr = [];
+		for(i=0;i<100;i++){
+			arr.push(new MovingText());
+		}
+		setInterval(function(){
+			for(i=0;arr.length;i++){
+				arr[i].move();
+			}
+		},100);
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

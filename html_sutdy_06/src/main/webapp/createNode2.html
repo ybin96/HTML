@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			var li = document.createElement("li");
+			var data= document.getElementById("data").value;
+			var txt = document.createTextNode(data);
+			li.appendChild(txt);
+			document.getElementById("list").appendChild(li);
+			document.getElementById("data").value = "";
+		}
+	}
+
+</script>
+</head>
+<body>
+	<h2>점심 메뉴를 추천해 주세요</h2>
+	<ul id="list">
+		<li>김치찌게</li>
+		<li>된장찌게</li>
+	</ul>
+	<hr>
+	<input id="data" type="text">
+	<button id="btn">추가</button>
+</body>
+</html>

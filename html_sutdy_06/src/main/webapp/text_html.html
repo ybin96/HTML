@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var data="<h1>hello</h1>";
+		
+		$("#btn1").click(function(){
+			$("#title1").html(data);	// 태그가 적용된다
+		});
+		
+		$("#btn2").click(function(){
+			$("#title2").text(data);	// 태그가 적용되지 않는다
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="title1">내용~~~</div>
+	<div id="title2">내용~~~</div>
+	<button id="btn1">title 1</button>
+	<button id="btn2">title 2</button>
+</body>
+</html>

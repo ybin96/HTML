@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		document.getElementById("btn").onclick=function(){
+			// 태그 추가하기
+			var tr = document.createElement("tr");
+			var td_name = document.createElement("td");
+			var td_kor = document.createElement("td");
+			var td_eng = document.createElement("td");
+			var td_math = document.createElement("td");
+			var td_sum = document.createElement("td");
+			var td_avg = document.createElement("td");
+			var td_good = document.createElement("td");
+			// 입력창에 값을 가져오기
+			var name = document.getElementById("name").value;
+			var kor = document.getElementById("kor").value;
+			var eng = document.getElementById("eng").value;
+			var math = document.getElementById("math").value;
+			var sum = Number(kor)+Number(eng)+Number(math);
+			var avg = Number(sum / 3);
+			var good = "합격!!!!";
+			// 가져온 값은 추가할 노드로 변경
+			var txt_name = document.createTextNode(name);
+			var txt_kor = document.createTextNode(kor);
+			var txt_eng = document.createTextNode(eng);
+			var txt_math = document.createTextNode(math);
+			var txt_sum = document.createTextNode(sum);
+			var txt_avg = document.createTextNode(avg);
+			var txt_good = document.createTextNode(good);
+			// th에 값을 추가
+			td_name.appendChild(txt_name);
+			td_kor.appendChild(txt_kor);
+			td_eng.appendChild(txt_eng);
+			td_math.appendChild(txt_math);
+			td_sum.appendChild(txt_sum);
+			td_avg.appendChild(txt_avg);
+			td_good.appendChild(txt_good);
+			// tr에 td추가
+			tr.appendChild(td_name);
+			tr.appendChild(td_kor);
+			tr.appendChild(td_eng);
+			tr.appendChild(td_math);
+			tr.appendChild(td_sum);
+			tr.appendChild(td_avg);
+			tr.appendChild(td_good);
+			
+			document.getElementById("table").appendChild(tr);
+			document.getElementById("name").value="";
+			document.getElementById("kor").value="";
+			document.getElementById("eng").value="";
+			document.getElementById("math").value="";
+
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+	<table id="table" border="1" width="80%">
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>인천교통공사</th>
+				<th>한전</th>
+				<th>한수원</th>
+				<th>총점</th>
+				<th>평균</th>
+				<th>합격여부</th>
+			</tr>
+
+		</thead>
+		<tbody></tbody>
+	</table>
+	<hr>
+	이름			: <input id="name" type="text"><br>
+	인천교통공사 	: <input id="kor" type="text"><br>
+	한전 			: <input id="eng" type="text"><br>
+	한수원 		: <input id="math" type="text"><br>
+	<button id="btn">추가</button>
+</body>
+</html>

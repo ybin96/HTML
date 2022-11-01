@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var li_list = document.getElementsByTagName("li");	
+		for(i=0;i<li_list.length;i++){
+			li_list[i].ondblclick = function(){
+				this.parentNode.removeChild(this);	//삭제하기위해 부모를 찾아야한다
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<ul>
+		<li>김치찌개</li>
+		<li>된장찌개</li>
+		<li>부대찌개</li>
+		<li>삽겹살</li>
+		<li>한우</li>
+		<li>갈비</li>
+	</ul>
+</body>
+</html>
