@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.high_light{
+		background:pink;
+	}
+	.select{
+		background:purple;
+	}
+
+</style>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		var selLi;
+		
+		 $("#btnAdd").click(function(){
+			var li = $("<li></li>").html($("#name").val());
+			$("#list").append(li);
+			$("#name").val("");
+			$("#name").focus();
+		 });
+		 
+		 $(document).on("click","li",function(){
+			 $("#name").val($(this).html());
+			 $("li").removeClass("select");
+			 $(this).addClass("select");
+			 selLi = this;
+		 });
+		 
+		 $(document).on("mouseover","li",function(){
+			 $(this).addClass("high_light");
+		 });
+		 $(document).on("mouseleave","li",function(){
+			 $(this).removeClass("high_light");
+		 });
+		 
+		$("#btnUpdate").click(function(){
+			$(selLi).html($("#name").val());
+		});
+		$("#btnDelete").click(function(){
+			$(selLi).remove();
+			$("#name").val("");
+		});
+	});
+</script>
+</head>
+<body>
+	<ul id="list">
+		<li>hello</li>
+		<li>good</li>
+	</ul>
+	<input type="text" id="name">
+	<button id="btnAdd">button</button>
+	<button id="btnUpdate">change</button>
+	<button id="btnDelete">delete</button>
+	
+</body>
+</html>

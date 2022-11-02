@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		/*
+		setTimeout(function(){
+			// select 후손인 option에서 선택된것의 값을 가져온다
+			var value = $("select > option:selected").val();
+			alert(value);
+		},5000);
+		*/
+		
+		$("#member").change(function(){
+			var name = $("#member>option:selected").val();
+			$("#name").val(name);
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<select id="member">
+		<option>홍길동</option>
+		<option>이순신</option>
+		<option>김종보</option>
+		<option>김건</option>
+	</select>
+	<input type="text" id="name">
+</body>
+</html>

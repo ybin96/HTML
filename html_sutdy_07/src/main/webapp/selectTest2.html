@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var data = {
+			DoItCoding:["이명진","신윤경","유근형","조영민","황은선"],	
+			SemiFinal:["정선기","구승현","이종현","임수린","최효주"],	
+			Systemout:["이정화","김영빈","이호형","정선현","황은솔"],	
+			LPHA4:["함예이","권현욱","김고운","김동민","문현빈"]	
+		};
+		
+		for(i in data){
+			//console.log(i); ==> 팀이름 (i는 팀이름)
+			var name = $("<option></option>").html(i);	// 
+			$("#team").append(name);
+		}
+		
+		
+		$("#team").change(function(){
+			$("#member").empty();	// 다른 팀을 고르면 기존 팀의 멤버를 삭제시켜준다
+			var team = $("#team > option:selected").val();	// 팀의 멤버의 이름들을 가져온다
+			var arr = data[team];
+			for(i=0;i<arr.length;i++){
+				var name = arr[i];
+				$("#member").append($("<option></option>").html(name));
+			}
+		});
+
+	});
+</script>
+</head>
+<body>
+	<select id="team"></select>
+	<select id="member"></select>
+</body>
+</html>
