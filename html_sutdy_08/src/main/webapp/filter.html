@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	/*
+	$("h3").filter(function(index){
+		return index % 3 ==0;
+	}).css({
+		background:"pink",
+		color:"white"
+	});
+	*/
+	
+	$("h3").filter(function(index){
+		var name = $(this).html(); 
+		return name.charAt(0) == "김";
+	}).css({
+		background:"pink",
+		color:"white"
+	});
+});
+</script>
+</head>
+<body>
+	<h3>김유신</h3>
+	<h3>홍길동</h3>
+	<h3>유관순</h3>
+	<h3>김길동</h3>
+	<h3>김종보</h3>
+	<h3>노태동</h3>
+	<h3>김건</h3>
+</body>
+</html>

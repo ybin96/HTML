@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	.item1{
+		background: pink;
+	}
+	.item2{
+		background: green;
+	}
+	.item3{
+		background: khaki;
+	}
+</style>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	
+	
+	// addClass에 함수를 사용할려면 반드시 return값이 와야한다
+	$("h1").addClass(function(i){
+		return "item"+(i+1);
+	});
+});
+</script>
+</head>
+<body>
+	<h1>hi</h1>
+	<h1>hello</h1>
+	<h1>got</h1>
+</body>
+</html>

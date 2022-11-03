@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var xml = "";
+	xml += "<members>";
+	xml += "<member>";
+	xml += "<name>김용빈</name>";
+	xml += "<age>27</age>";
+	xml += "</member>";
+	xml += "<member>";
+	xml += "<name>김건</name>";
+	xml += "<age>28</age>";
+	xml += "</member>";
+	xml += "<member>";
+	xml += "<name>노태동</name>";
+	xml += "<age>32</age>";
+	xml += "</member>";
+	xml += "</members>";
+	
+	var xmlDoc = $.parseXML(xml);
+	$(xmlDoc).find("member").each(function(){
+		var name = $(this).find("name").text();
+		var age = $(this).find("age").text();
+		var div = $("<div></div>").css("border","solid pink 3px");
+		var h1 = $("<h1></h1>").html(name);
+		var p = $("<p></p>").html(age);
+		$(div).append(h1,p);
+		$("body").append(div);
+	});
+});
+</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	// form에 submit버튼의 이벤트 설정
+	$("#my_form").submit(function(event){
+		var name = $("#name").val();
+		var pwd = $("#password").val();
+		
+		// event.preventDefault();
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+	<form action="submitOK.jsp" id="my_form" method="post">
+		<table>
+			<tr>
+				<td>이름:</td>
+				<td><input type="text" name="name" id="name"></td>
+			</tr>
+			<tr>
+				<td>암호:</td>
+				<td><input type="password" name="password" id="password"></td>
+			</tr>
+		</table>
+	<input type="submit" value="확인">
+	</form>
+</body>
+</html>
