@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var student={name:"홍길동"};
+	student.age = 20;
+	student.addr = "서울";
+	// extend(객체, 추가하고자 하는 속성)
+	$.extend(student,{
+		kor:100,
+		eng:90,
+		math:40
+	});
+	console.log(student);
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

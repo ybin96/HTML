@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	.item{
+		background: pink;
+	}
+</style>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	var i = 0;
+	setInterval(function(){
+		$("h1").removeClass("item");
+		$("h1:eq("+i+")").addClass("item");
+		i++;
+		if(i>2){
+			i=0;
+		}
+	},500);
+});
+</script>
+</head>
+<body>
+	<h1>hi</h1>
+	<h1>hello</h1>
+	<h1>got</h1>
+</body>
+</html>
