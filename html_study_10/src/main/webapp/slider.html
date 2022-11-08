@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	*{
+		margin:0px;
+		padding:0px;
+	}
+	
+	.animation_canvas{
+		position: relative;
+		width:600px;
+		height:750px;
+		overflow:hidden;
+	}
+	
+	.slider_panel{
+		width:2400px;
+		position:relative;
+	}
+	
+	.slider_image{
+		float:left;
+		width:600px;
+		height:750px;
+	}
+	
+	.slider_text_panel{
+		position:absolute;
+		left:50px;
+		top:200px;
+	}
+	
+	.slider_text{
+		position: absolute;
+		width:250px;
+		height:150px;
+	}
+
+	.control_panel{
+		position: absolute;
+		top:730px;
+		left:270px;
+		height:13px;
+		overflow:hidden;
+	}
+	
+	.control_button{
+		width:12px;
+		height:46px;
+		position: relative;
+		float:left;
+		cursor: pointer;
+		background: url('./images/point_button.png');
+	}
+	
+	.control_button:hover{
+		top:-16px;
+	}
+	.control_button:active{
+		top:-31px;
+	}
+	
+	.active{
+		top:-31px;
+	}
+</style>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	// 	글자를 왼쪽으로 -300밀어서 안보이게 만든다
+	$(".slider_text").css("left",-300);
+	
+	//	글자에 data-index 속성을 만들어 순서를 정해준다
+	$(".slider_text").each(function(index){
+		$(this).attr("data-index",index);
+	});
+	
+	//	버튼에 data-index 속성을 만들어 순서를 정해준다
+	$(".slider_button").each(function(index){
+		$(this).attr("data-index",index);
+	});
+	
+	
+	function moveSlider(index){
+		var willMoveLeft = -(index * 600);
+		$(".slider_panel").animate({left:willMoveLeft},'slow');
+		
+		$(".control_button[data-index="+index+"]").addClass("active");
+		$(".control_button[data-index!="+index+"]").removeClass("active");
+		
+		$(".slider_text[data-index]="+index+"]").show().animate({left:0},'slow');
+		$(".slider_text[data-index]="+index+"]").hide().animate({left:-300},'slow');
+	}
+	
+	// 버튼이 눌러지면 인덱스를 가져와서 moveSlider를 호출
+	$(".control_button").each(function(index){
+		$(this).attr("data-index",index);
+	}).click(function(){
+		var index = $(this).attr("data-index");
+		moveSlider(index);
+	});
+	
+	var randomNumber = Math.round(Math.random()*3);
+	moveSlider(randomNumber);
+	
+});
+</script>
+</head>
+<body>
+	<h1>Test Header</h1>
+	<div class="animation_canvas">
+		<div class="slider_panel">
+			<img class="slider_image" src="./images/seulgi3.jpg">
+			<img class="slider_image" src="./images/seulgi4.jpg">
+			<img class="slider_image" src="./images/seulgi1.jpg">
+			<img class="slider_image" src="./images/seulgi2.jpg">
+		</div>
+		<div class="slider_text_panel">
+			<div class="slider_text">
+				<h1>슬기1</h1>
+				<p>wow</p>
+			</div>
+			<div class="slider_text">
+				<h1>슬기2</h1>
+				<p>oh</p>
+			</div>
+			<div class="slider_text">
+				<h1>슬기3</h1>
+				<p>good</p>
+			</div>
+			<div class="slider_text">
+				<h1>슬기4</h1>
+				<p>oh~</p>
+			</div>
+		</div>
+		<div class="control_panel">
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+		</div>
+	</div>
+	<h1>Test Header</h1>
+</body>
+</html>
